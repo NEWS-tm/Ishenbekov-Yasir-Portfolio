@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио — Ишенбеков Ясир</title>
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e5e7eb;
+            --card-color: #1e293b;
+            --accent: #38bdf8;
+        }
+
+        body.light {
+            --bg-color: #f9fafb;
+            --text-color: #111827;
+            --card-color: #ffffff;
+            --accent: #2563eb;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: 0.3s;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: var(--accent);
+            color: white;
+            font-weight: bold;
+        }
+
+        .card {
+            max-width: 900px;
+            margin: auto;
+            background: var(--card-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .info p {
+            font-size: 18px;
+        }
+
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .soon {
+            margin-top: 25px;
+            padding: 15px;
+            text-align: center;
+            border: 2px dashed var(--accent);
+            border-radius: 12px;
+            font-size: 20px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            opacity: 0.85;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="controls">
+        <button onclick="toggleTheme()">🌙 / ☀️</button>
+        <button onclick="toggleLang()">RU / EN</button>
+    </div>
+
+    <h1 id="title">Портфолио</h1>
+</header>
+
+<div class="card">
+    <div class="info">
+        <p id="name"><b>Имя:</b> Ишенбеков Ясир</p>
+        <p id="city"><b>Город:</b> Бишкек</p>
+        <p id="school"><b>Школа:</b> ЭЭЛ №65</p>
+    </div>
+
+    <div class="videos">
+        <video controls>
+            <source src="VID-20260111-WA0038.mp4" type="video/mp4">
+        </video>
+
+        <video controls>
+            <source src="VID-20260111-WA0046.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="soon" id="soon">
+        🚧 3-я работа — скоро
+    </div>
+</div>
+
+<footer>
+    <p id="phone">📞 +996 507 049 (WhatsApp)</p>
+    <p id="tg">✈️ Telegram: <a href="https://t.me/HewsTM" target="_blank">@HewsTM</a></p>
+    <p>© 2026 Ишенбеков Ясир</p>
+</footer>
+
+<script>
+    let lang = "ru";
+
+    function toggleTheme() {
+        document.body.classList.toggle("light");
+    }
+
+    function toggleLang() {
+        if (lang === "ru") {
+            lang = "en";
+            document.getElementById("title").innerText = "Portfolio";
+            document.getElementById("name").innerHTML = "<b>Name:</b> Ishenbekov Yasir";
+            document.getElementById("city").innerHTML = "<b>City:</b> Bishkek";
+            document.getElementById("school").innerHTML = "<b>School:</b> EEL No.65";
+            document.getElementById("soon").innerText = "🚧 3rd project — coming soon";
+            document.getElementById("phone").innerText = "📞 +996 507 049 (WhatsApp)";
+            document.getElementById("tg").innerHTML = "✈️ Telegram: <a href='https://t.me/HewsTM' target='_blank'>@HewsTM</a>";
+        } else {
+            lang = "ru";
+            document.getElementById("title").innerText = "Портфолио";
+            document.getElementById("name").innerHTML = "<b>Имя:</b> Ишенбеков Ясир";
+            document.getElementById("city").innerHTML = "<b>Город:</b> Бишкек";
+            document.getElementById("school").innerHTML = "<b>Школа:</b> ЭЭЛ №65";
+            document.getElementById("soon").innerText = "🚧 3-я работа — скоро";
+            document.getElementById("phone").innerText = "📞 +996 507 049 (WhatsApp)";
+            document.getElementById("tg").innerHTML = "✈️ Telegram: <a href='https://t.me/HewsTM' target='_blank'>@HewsTM</a>";
+        }
+    }
+</script>
+
+</body>
+</html>
